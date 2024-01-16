@@ -12,7 +12,7 @@ namespace HigherOrLower
 {
     public partial class Form1 : Form
     {
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace HigherOrLower
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           gamePanel.Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,21 +43,49 @@ namespace HigherOrLower
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // var form2 = new HowToPlayForm();
-            // form2.Show();
-            panel1.Visible = true;
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            panel1.Visible = false;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
+            //(Rules back button) Go back to main menu
+            homePanel.Visible = true;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rulesButton_Click(object sender, EventArgs e)
+        {
+            //Go to rule page
+            homePanel.Visible = false;
+            helpPanel.Visible = true;
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            //Go to Game Page
+            gamePanel.Visible = true;
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            //Close program
+            Application.Exit();
+        }
+
+        private void homePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gamePanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

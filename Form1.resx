@@ -117,17 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Select a difficulty to play:
+  <data name="label5.Text" xml:space="preserve">
+    <value>Choose a difficulty:
 
 Easy: 1-10
+
 Medium: 1-25
+
 Hard: 1-50
 
-You then have 5 attempts to guess the computer's number!
+Then you will have 5 guesses to guess what the computer's number is within the selected range.
 
-You will be told on screen wether the computer's number is higher or lower than you guessed.
+The computer will tell you wether it's number is higher or lower than what you have guessed.
 
+If you guess it correctly within 5 guesses you win, if not then you lose.
 </value>
   </data>
 </root>
