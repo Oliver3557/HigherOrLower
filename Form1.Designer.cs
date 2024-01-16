@@ -45,6 +45,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.responseLabel = new System.Windows.Forms.Label();
+            this.winsLabel = new System.Windows.Forms.Label();
+            this.lossesLabel = new System.Windows.Forms.Label();
             this.helpPanel.SuspendLayout();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
@@ -65,7 +69,6 @@
             // 
             // homePanel
             // 
-            this.homePanel.Controls.Add(this.gamePanel);
             this.homePanel.Controls.Add(this.exitButton);
             this.homePanel.Controls.Add(this.playButton);
             this.homePanel.Controls.Add(this.rulesButton);
@@ -173,6 +176,10 @@
             // 
             // gamePanel
             // 
+            this.gamePanel.Controls.Add(this.lossesLabel);
+            this.gamePanel.Controls.Add(this.winsLabel);
+            this.gamePanel.Controls.Add(this.responseLabel);
+            this.gamePanel.Controls.Add(this.textBox1);
             this.gamePanel.Controls.Add(this.button2);
             this.gamePanel.Controls.Add(this.button1);
             this.gamePanel.Controls.Add(this.label6);
@@ -186,7 +193,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(174, 29);
+            this.label6.Location = new System.Drawing.Point(183, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(208, 25);
             this.label6.TabIndex = 0;
@@ -194,7 +201,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 222);
+            this.button1.Location = new System.Drawing.Point(26, 223);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -204,7 +211,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(449, 223);
+            this.button2.Location = new System.Drawing.Point(26, 253);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -212,11 +219,49 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(234, 144);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // responseLabel
+            // 
+            this.responseLabel.AutoSize = true;
+            this.responseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.responseLabel.Location = new System.Drawing.Point(211, 96);
+            this.responseLabel.Name = "responseLabel";
+            this.responseLabel.Size = new System.Drawing.Size(159, 24);
+            this.responseLabel.TabIndex = 4;
+            this.responseLabel.Text = "Correct / Incorrect";
+            // 
+            // winsLabel
+            // 
+            this.winsLabel.AutoSize = true;
+            this.winsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winsLabel.Location = new System.Drawing.Point(234, 206);
+            this.winsLabel.Name = "winsLabel";
+            this.winsLabel.Size = new System.Drawing.Size(48, 20);
+            this.winsLabel.TabIndex = 5;
+            this.winsLabel.Text = "Wins:";
+            // 
+            // lossesLabel
+            // 
+            this.lossesLabel.AutoSize = true;
+            this.lossesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lossesLabel.Location = new System.Drawing.Point(234, 243);
+            this.lossesLabel.Name = "lossesLabel";
+            this.lossesLabel.Size = new System.Drawing.Size(64, 20);
+            this.lossesLabel.TabIndex = 6;
+            this.lossesLabel.Text = "Losses:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 294);
+            this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.helpPanel);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -248,6 +293,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lossesLabel;
+        private System.Windows.Forms.Label winsLabel;
+        private System.Windows.Forms.Label responseLabel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
