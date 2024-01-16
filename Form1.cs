@@ -74,7 +74,7 @@ namespace HigherOrLower
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            //Close program
+            //Main Menu Exit Button
             Application.Exit();
         }
 
@@ -86,6 +86,19 @@ namespace HigherOrLower
         private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Game Exit Button
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Game back button
+            homePanel.Visible = true;
+            gamePanel.Visible = false;
         }
     }
 }
