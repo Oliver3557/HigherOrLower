@@ -195,7 +195,7 @@ namespace HigherOrLower
             if (guessCount == 5 && guessedInt != gameNumber)
             {
                 //User Loses
-                responseLabel.Text = "You Lose!";
+                responseLabel.Text = $"You Lose! It was {gameNumber}";
                 lossesCount++;
 
                 UpdateGame();
