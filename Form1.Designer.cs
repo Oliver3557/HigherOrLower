@@ -42,13 +42,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gamePanel = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.responseLabel = new System.Windows.Forms.Label();
-            this.winsLabel = new System.Windows.Forms.Label();
+            this.guessButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.lossesLabel = new System.Windows.Forms.Label();
+            this.winsLabel = new System.Windows.Forms.Label();
+            this.responseLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.countLabel = new System.Windows.Forms.Label();
+            this.difficultyLabel = new System.Windows.Forms.Label();
             this.helpPanel.SuspendLayout();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
@@ -127,6 +131,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // label1
             // 
@@ -176,6 +181,10 @@
             // 
             // gamePanel
             // 
+            this.gamePanel.Controls.Add(this.difficultyLabel);
+            this.gamePanel.Controls.Add(this.countLabel);
+            this.gamePanel.Controls.Add(this.guessButton);
+            this.gamePanel.Controls.Add(this.label7);
             this.gamePanel.Controls.Add(this.lossesLabel);
             this.gamePanel.Controls.Add(this.winsLabel);
             this.gamePanel.Controls.Add(this.responseLabel);
@@ -183,31 +192,67 @@
             this.gamePanel.Controls.Add(this.button2);
             this.gamePanel.Controls.Add(this.button1);
             this.gamePanel.Controls.Add(this.label6);
-            this.gamePanel.Location = new System.Drawing.Point(0, 3);
+            this.gamePanel.Location = new System.Drawing.Point(3, 3);
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(598, 288);
             this.gamePanel.TabIndex = 12;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
             // 
-            // label6
+            // guessButton
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(183, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Guess my number!";
+            this.guessButton.Location = new System.Drawing.Point(378, 144);
+            this.guessButton.Name = "guessButton";
+            this.guessButton.Size = new System.Drawing.Size(105, 23);
+            this.guessButton.TabIndex = 8;
+            this.guessButton.Text = "Submit Guess";
+            this.guessButton.UseVisualStyleBackColor = true;
+            this.guessButton.Click += new System.EventHandler(this.guessButton_Click);
             // 
-            // button1
+            // label7
             // 
-            this.button1.Location = new System.Drawing.Point(26, 223);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(125, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Enter Guess:";
+            // 
+            // lossesLabel
+            // 
+            this.lossesLabel.AutoSize = true;
+            this.lossesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lossesLabel.Location = new System.Drawing.Point(235, 247);
+            this.lossesLabel.Name = "lossesLabel";
+            this.lossesLabel.Size = new System.Drawing.Size(0, 20);
+            this.lossesLabel.TabIndex = 6;
+            // 
+            // winsLabel
+            // 
+            this.winsLabel.AutoSize = true;
+            this.winsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winsLabel.Location = new System.Drawing.Point(235, 210);
+            this.winsLabel.Name = "winsLabel";
+            this.winsLabel.Size = new System.Drawing.Size(0, 20);
+            this.winsLabel.TabIndex = 5;
+            // 
+            // responseLabel
+            // 
+            this.responseLabel.AutoSize = true;
+            this.responseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.responseLabel.Location = new System.Drawing.Point(230, 90);
+            this.responseLabel.Name = "responseLabel";
+            this.responseLabel.Size = new System.Drawing.Size(134, 24);
+            this.responseLabel.TabIndex = 4;
+            this.responseLabel.Text = "Higher / Lower";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(234, 144);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
             // 
@@ -219,42 +264,43 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(234, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(26, 223);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // responseLabel
+            // label6
             // 
-            this.responseLabel.AutoSize = true;
-            this.responseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.responseLabel.Location = new System.Drawing.Point(211, 96);
-            this.responseLabel.Name = "responseLabel";
-            this.responseLabel.Size = new System.Drawing.Size(159, 24);
-            this.responseLabel.TabIndex = 4;
-            this.responseLabel.Text = "Correct / Incorrect";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(183, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(208, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Guess my number!";
             // 
-            // winsLabel
+            // countLabel
             // 
-            this.winsLabel.AutoSize = true;
-            this.winsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.winsLabel.Location = new System.Drawing.Point(234, 206);
-            this.winsLabel.Name = "winsLabel";
-            this.winsLabel.Size = new System.Drawing.Size(48, 20);
-            this.winsLabel.TabIndex = 5;
-            this.winsLabel.Text = "Wins:";
+            this.countLabel.AutoSize = true;
+            this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countLabel.Location = new System.Drawing.Point(231, 180);
+            this.countLabel.Name = "countLabel";
+            this.countLabel.Size = new System.Drawing.Size(0, 20);
+            this.countLabel.TabIndex = 10;
             // 
-            // lossesLabel
+            // difficultyLabel
             // 
-            this.lossesLabel.AutoSize = true;
-            this.lossesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lossesLabel.Location = new System.Drawing.Point(234, 243);
-            this.lossesLabel.Name = "lossesLabel";
-            this.lossesLabel.Size = new System.Drawing.Size(64, 20);
-            this.lossesLabel.TabIndex = 6;
-            this.lossesLabel.Text = "Losses:";
+            this.difficultyLabel.AutoSize = true;
+            this.difficultyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.difficultyLabel.Location = new System.Drawing.Point(22, 180);
+            this.difficultyLabel.Name = "difficultyLabel";
+            this.difficultyLabel.Size = new System.Drawing.Size(0, 20);
+            this.difficultyLabel.TabIndex = 11;
             // 
             // Form1
             // 
@@ -297,6 +343,10 @@
         private System.Windows.Forms.Label winsLabel;
         private System.Windows.Forms.Label responseLabel;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button guessButton;
+        private System.Windows.Forms.Label countLabel;
+        private System.Windows.Forms.Label difficultyLabel;
     }
 }
 
